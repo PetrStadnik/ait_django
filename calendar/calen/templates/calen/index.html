@@ -5,6 +5,22 @@
     <title>Index</title>
 </head>
 <body>
-Moje super stánka
+<h1>Moje super stánka</h1><br>
+<b>ÁČKO: {{ a }}</b><br>
+<b>MOCNINA: {{ mocnina }}</b><br>
+<b>Kritérium: {{ kriterium }}</b><br>
+{% if kriterium > 5 %}
+    <i>Je to větší než 5!</i>
+{% else %}
+    <i>MENŠÍ!</i>
+{% endif %}
+<br>
+<hr>
+{% for i in pole %}
+    -- {{ i }} <br>
+{% endfor %}
+
+<a href="{% url "calen:kolo" %}">Stránka s koly</a>
+
 </body>
 </html>
