@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+from .models import *
+
 def index(request):
     a = 5
     b = a**2
@@ -10,4 +11,9 @@ def index(request):
 
 def kolo(request):
     return HttpResponse("Stránka s koly!")
+
+
+def udalosti(request):
+    ud = Udalost.objects.filter(jmeno="Narozeniny")
+    return render(request, "calen/udalosti.html", {"udalosti": ud})
 

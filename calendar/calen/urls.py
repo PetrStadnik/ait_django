@@ -7,4 +7,5 @@ app_name = ("calen")
 urlpatterns = [
     path("", views.index, name="index"),
     path("kolo", views.kolo, name="kolo"),
+    path("udalosti", views.udalosti, name="udalosti"),
 ]
