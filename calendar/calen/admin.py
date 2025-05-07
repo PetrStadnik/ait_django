@@ -5,3 +5,4 @@ from calen.models import *
 # Register your models here.
 
 admin.site.register(Udalost)
+admin.site.register(Ukol)

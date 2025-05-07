@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import *
 
@@ -14,6 +14,9 @@ def kolo(request):
 
 
 def udalosti(request):
-    ud = Udalost.objects.filter(jmeno="Narozeniny")
+    ud = Udalost.objects.all()
     return render(request, "calen/udalosti.html", {"udalosti": ud})
 
+def detail(request, udalost_id):
+    ud = get_object_or_404(Udalost, pk=udalost_id)
+    return render(request, "calen/detail_udalosti.html", {"udalost": ud})

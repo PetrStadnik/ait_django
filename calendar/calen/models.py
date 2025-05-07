@@ -12,3 +12,13 @@ class Udalost(models.Model):
     celodenni = models.BooleanField(default=True)
     def __str__(self):
         return str(self.jmeno) + ": ("+ str(self.popis) + ")"
+
+class Ukol(models.Model):
+    jmeno = models.CharField(max_length=150, null=False)
+    popis = models.TextField(max_length=500, null=True)
+    deadline = models.DateTimeField(default=datetime.now())
+    splneno = models.BooleanField(default=False)
+    udalost = models.ForeignKey(Udalost, on_delete=models.CASCADE, null=False)
+
+    def __str__(self):
+        return str(self.udalost.jmeno) + " -> " + self.jmeno

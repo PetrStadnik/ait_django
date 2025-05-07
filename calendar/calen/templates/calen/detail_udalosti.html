@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<h1>Detail události: {{ udalost.jmeno }}</h1>
+    <br>Začátek: {{ udalost.zacatek }}
+    {% if not udalost.jen_zacatek %}
+        <br>Konec: {{ udalost.konec }}
+    {% endif %}
+    <br>Popis: {{ udalost.popis }}
+    <br>Celodenní: {{ udalost.celodenni }}
+<H3>Úkoly:</H3>
+{% for t in udalost.ukol_set.all %}
+    {{ t.jmeno }}: deadline: {{ t.deadline }}<br>
+{% endfor %}
+</body>
+</html>

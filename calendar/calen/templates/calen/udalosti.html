@@ -7,7 +7,7 @@
 <body>
     <h1>Moje události</h1>
     {% for u in udalosti %}
-    	 <br>{{ u }}
+        <br><a href="{% url "calen:detail" u.id %}"> {{ u }}</a>
     {% endfor %}
 </body>
 </html>
