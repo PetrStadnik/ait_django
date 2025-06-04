@@ -6,6 +6,9 @@
 </head>
 <body>
     <h1>Moje události</h1>
+    <h2>{{ user }}</h2>
+    <a href="{% url 'calen:logout' %}"> Odhlásit se</a>
+    <a href="{% url 'calen:login' %}"> Přihlásit se</a>
     {% for u in udalosti %}
         <br><a href="{% url "calen:detail" u.id %}"> {{ u }}</a>
     {% endfor %}
